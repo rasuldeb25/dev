@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{purple}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+\usepackage{fontawesome5} % For the icons
+
+% --- CUSTOM COLORS ---
+\definecolor{primary_color}{HTML}{4A148C} % Deep Purple
+\definecolor{secondary_color}{HTML}{303F9F} % Indigo
+\colorlet{color0}{black}
+\colorlet{color1}{primary_color}
+\colorlet{color2}{secondary_color}
+
+% --- PERSONAL DATA ---
+\name{Rasulbek}{Mashalov}
+\title{MSc Computer Science Engineering Student}
+\address{Fényes udvar 12}{4029, Debrecen, Hungary}{}
+\phone[mobile]{+36 70 345 9874}
+
+% --- UNIFIED SOCIAL LINKS (Clean "Profile" Style) ---
+% We use \extrainfo to manually format all links so they look identical
+\extrainfo{%
+    \faEnvelope\ \href{mailto:rasulbekmashalov@mailbox.unideb.hu}{Email Address}\\
+    \faGraduationCap\ \href{https://scholar.google.com/citations?user=_DBudx8AAAAJ}{Google Scholar}\\
+    \faOrcid\ \href{https://orcid.org/0009-0004-3806-164X}{ORCID}\\
+    \faLinkedin\ \href{https://www.linkedin.com/in/rasulbek-mashalov-99058625a}{LinkedIn}\\
+    \faGithub\ \href{https://github.com/rasuldeb25}{GitHub}\\
+}
+
+\newcommand{\publication}[5]{%
+    \cvitem{}{\textbf{#1} (#2)}
+    \vspace{-0.5em}
+    \cvitem{}{\textit{#3}}
+    \vspace{-0.5em}
+    \cvitem{}{\small #4}
+    \vspace{-0.5em}
+    % This line makes the link BOLD (\textbf) and BLUE (\textcolor{blue})
+    \cvitem{}{\small \href{#5}{\textbf{\textcolor{blue}{\faExternalLinkAlt~DOI Link}}}}
+    \vspace{0.5em}
+}
+
+\begin{document}
+
+\makecvtitle
+
+% --- Professional Summary ---
+\section{Professional Summary}
+% \normalsize makes the font the standard reading size (same as your new bullet points)
+\normalsize 
+MSc Computer Science Engineering student with a background in \textbf{Computational Physics} and Molecular Dynamics simulations. Bridging the gap between biological sciences and informatics, I specialize in using \textbf{Python}, \textbf{Linux/HPC environments}, and AI tools (AlphaFold) to analyze complex biological data. I am seeking a research position to apply my skills in data analysis, machine learning, and bioinformatics within a medical research context.
+
+% --- Education Summary ---
+\section{Education}
+\cventry{Sep 2025 -- Present}{MSc in Computer Science Engineering}{University of Debrecen}{Debrecen, Hungary}{}{
+    \normalsize % <--- Makes "Focus Areas" bigger
+    \textbf{Focus Areas:} Machine Learning, Big Data Analysis, Parallel Image Processing
+}
+\vspace{6pt}
+\cventry{Sep 2020 -- Jul 2024}{BSc in Physics}{National University of Uzbekistan}{Tashkent, Uzbekistan}{}{
+    \normalsize % <--- Makes "Focus Areas" bigger
+    \textbf{Focus Areas:} Theoretical Physics, Molecular Dynamics, Computational Physics
+}
+
+% --- CPT (Research) ---
+\section{Research \& Work Experience}
+\cventry{Aug 2023 -- Aug 2025}{Research Engineer (Computational Biophysics)}{Center for Advanced Technologies}{Tashkent, Uzbekistan}{}{
+    % Added \normalsize here to increase font size
+    \normalsize 
+    \begin{itemize}
+        \setlength\itemsep{0.6em} 
+        \item[--] Conducted large-scale \textbf{Molecular Dynamics (MD) simulations} using GROMACS on High-Performance Computing (HPC) clusters.
+        \item[--] Developed \textbf{Python scripts} to automate data analysis pipelines and visualize protein stability metrics.
+        \item[--] Acquired foundational knowledge of \textbf{AlphaFold2} and RF Diffusion for protein structure prediction.
+        \item[--] Co-authored 3 peer-reviewed papers involving the statistical analysis of biological interaction data.
+    \end{itemize}
+}
+
+% --- Add extra vertical space between jobs ---
+\vspace{8pt} 
+
+% --- Salam School (Teaching) ---
+\cventry{Sep 2024 -- Sep 2025}{Science Teacher}{Salam International School}{Tashkent, Uzbekistan}{}{
+    % Added \normalsize here too
+    \normalsize
+    \begin{itemize}
+        \setlength\itemsep{0.6em} 
+        \item[--] Delivered Physics curriculum in English to secondary school students.
+        \item[--] Developed soft skills in communication and presenting complex scientific concepts to non-experts.
+    \end{itemize}
+}
+
+% --- Skills ---
+\section{Technical Skills}
+\cvitem{Programming}{Python (Pandas, NumPy, Matplotlib), Java (foundation), HTML/CSS}
+\cvitem{Bio-Informatics}{GROMACS, AlphaFold2, PyMOL, VMD, ProteinMPNN}
+\cvitem{Tools \& OS}{Linux (Fedora/Ubuntu), Git/GitHub, VS Code, VIM, Kate}
+\cvitem{Languages}{English (C1), Russian (B2), German (B1), Uzbek (Native)}
+
+% --- PUBLICATIONS ---
+\section{Selected Publications}
+% --- 1st ---
+\publication{Molecular dynamics insights into the redox effects on PD-1/PD-L1 and PD-1/PD-L2 interactions}
+{2025}
+{Scientific Reports, vol. 15, Article no. 32909.}
+{Authors: \textbf{Rasulbek Mashalov}, Zulfizar Toshpulatova, Zhitong Chen, Jamoliddin Razzokov}
+{https://doi.org/10.1038/s41598-025-12902-x}
+% --- 2nd ---
+\publication{Oxidation-induced destabilization of polymorphic $\alpha$-synuclein fibrils: insights from molecular dynamics}
+{2025}
+{Frontiers in Physics, vol. 13.}
+{Authors: Tohir Akramov, Parthiban Marimuthu, Mukhriddin Makhkamov, Aamir Shahzad, \textbf{Rasulbek Mashalov}, Jamoliddin Razzokov}
+{https://doi.org/10.3389/fphy.2025.1591640}
+% --- 3rd ---
+\publication{Exploring $\alpha$-synuclein stability under the external electrostatic field: Effect of repeat unit}
+{2024}
+{Journal of Structural Biology, vol. X, 108109.}
+{Authors: Javokhir Khursandov, \textbf{Rasulbek Mashalov}, Mukhriddin Makhkamov, Farkhad Turgunboev, Avez Sharipov, Jamoliddin Razzokov}
+{https://doi.org/10.1016/j.jsb.2024.108109}
+
+% --- Honours ---
+\section{Honours \& Conferences}
+\cventry{Sep 2025}{Stipendium Hungaricum Scholarship}{Tempus Public Foundation}{Hungary}{}{Full merit-based scholarship for Master's studies.}
+\cventry{Nov 2024}{Poster Presenter}{Innoweek 2024 International Youth Conference}{Uzbekistan}{}{Topic: "Computational Design of Novel TRPV1 Binders using AI-driven techniques."}
+\cventry{Nov 2024}{Protein Design School Participant}{Center for Advanced Technologies}{Uzbekistan}{}{Topic: "Introduction to AlphaFold2, ProteinMPNN and RFDiffusion "}
+
+\end{document}

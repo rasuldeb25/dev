@@ -1,7 +1,7 @@
 from google import genai
 from google.genai import errors
 
-client = genai.Client(api_key="AIzaSyBOb7h-v12GhAWzY3wfM1onv9ZJJryM704")
+client = genai.Client(api_key="")
 
 def check_real_access():
     print(f"{'Model Name':<40} | {'Status'}")

@@ -3,3 +3,12 @@ We are going to start the projects, they are following:
 1. Automation
 2. Machine Learning 04:11:06
 3. Website with Django
+4: Machine Learning notes: 
+steps:
+1.import data
+2.clean the data
+3.split data into training and test sets
+4.create a model
+5.train the model
+6.make predictions
+7.evaluate and improve

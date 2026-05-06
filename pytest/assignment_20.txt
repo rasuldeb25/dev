@@ -1,0 +1,52 @@
+Task 1 – Breaking an affine cipher
+
+The following hexadecimal byte sequence is an encrypted English plaintext. The encryption was applied byte by byte using the affine formula:
+
+    C = (a * P + b) mod 256
+
+where P is the plaintext byte and C is the ciphertext byte. The values a and b are unknown. The value a is relatively prime to 256.
+
+The plaintext is ASCII text and contains the known internal word given below.
+
+Write a Python program that finds the key values a and b, decrypts the ciphertext, and prints the original English message.
+
+Ciphertext (hex):
+bb 1d 8d 57 a0 45 57 8d a0 57 d1 4d 09 09 45 57 a0 5d 9d d1 4d a0 a0 45 57 17 d1 09 57 4d 8d a0 57 8d 8d a0 a0 09 45 4d 45 a0 a0 57 4d 17 9d 57 4d d1
+
+Known internal word:
+CHANNEL
+
+============================================================
+Task 2 – Secure socket protocol
+
+Implement two Python programs:
+
+server.py
+client.py
+
+Use TCP sockets. The server listens on localhost.
+All messages are text-based and end with \n.
+
+Each solution must use the cryptographic functions implemented during the laboratory sessions (e.g. modular exponentiation, affine cipher, RSA, Diffie-Hellman, ElGamal). If hashing, signing, encryption, decryption, modular exponentiation, RSA, ElGamal, Diffie-Hellman, Caesar or affine encryption is needed, build it from those laboratory functions.
+
+The use of PyCrypto or other external cryptographic libraries is not allowed.
+
+Your assigned protocol: Affine-encrypted two-step login
+
+Protocol specification:
+Use the cryptographic functions implemented during the laboratory sessions: AffineEnc, AffineDec.
+
+Shared keys: ka = 21, kb = 9, n = 256. Username: student. Password: python.
+
+1. Client connects and encrypts the username with AffineEnc.
+2. Client sends: USER|encrypted_username_hex
+3. Server decrypts and replies: OK|send password if the username is correct.
+4. Client encrypts the password and sends: PASS|encrypted_password_hex
+5. Server decrypts and verifies.
+6. Server replies: OK|login complete or ERROR|login failed.
+
+Submission requirements:
+- Submit server.py and client.py.
+- The programs must be runnable from the command line.
+- The server must print the received protocol messages and the final decision.
+- The client must print the server responses and whether the protocol succeeded.

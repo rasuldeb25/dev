@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rasulbek Mashalov - CV BMW</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  @page { size: A4; margin: 0; }
+  body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; width: 210mm; height: 297mm; margin: 0; box-sizing: border-box; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #ffffff; color: #334155; }
+  
+  /* Header Styles - Updated for mirrored logos */
+  .header { background-color: #0f172a; color: #ffffff; padding: 25px 35px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  
+  .profile-pic { width: 75px; height: 75px; border-radius: 50%; background-color: #cbd5e1; border: 2px solid #38bdf8; overflow: hidden; flex-shrink: 0; }
+  .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+  
+  .header-content { flex-grow: 1; }
+  .header h1 { margin: 0 0 5px 0; font-size: 28px; color: #ffffff; }
+  .header-subtitle { font-size: 11px; font-weight: 700; color: #cbd5e1; margin-bottom: 8px; display: flex; align-items: center; letter-spacing: 0.5px; }
+  .badge { background: #10b981; color: #ffffff; padding: 3px 10px; border-radius: 9999px; font-size: 9px; margin-left: 12px; text-transform: uppercase; letter-spacing: 0; }
+  
+  /* Brand Logo (Top Right) */
+  .brand-logo { width: 75px; height: 75px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+  
+  /* Contact Info (with Active Links) */
+  .contact-info { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 10px; color: #94a3b8; }
+  .contact-info a { color: inherit; text-decoration: none; white-space: nowrap; display: flex; align-items: center; }
+  .contact-info a:hover { color: #ffffff; }
+  .contact-info i { color: #38bdf8; margin-right: 5px; }
+  
+  /* Body Layout */
+  .content-wrapper { display: flex; flex-grow: 1; height: calc(297mm - 125px); }
+  .main { width: 68%; padding: 25px 35px; box-sizing: border-box; }
+  .sidebar { width: 32%; background: #0f172a; color: #f8fafc; padding: 25px 25px; box-sizing: border-box; }
+  
+  /* Main Column Styles */
+  .section-title { font-size: 12px; font-weight: 700; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; margin-bottom: 12px; margin-top: 15px; text-transform: uppercase; color: #0284c7; letter-spacing: 0.5px; display: flex; align-items: center; }
+  .section-title i { margin-right: 8px; font-size: 14px; }
+  .section-title:first-child { margin-top: 0; }
+  .item { margin-bottom: 12px; }
+  .item-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 12px; color: #0f172a; align-items: center; }
+  .date { font-size: 10px; color: #94a3b8; font-weight: 400; }
+  .item-sub { font-size: 10px; font-weight: 600; margin-top: 2px; margin-bottom: 4px; color: #0284c7; }
+  .item-sub i { color: #94a3b8; margin-right: 5px; }
+  p, ul { font-size: 10.5px; margin: 4px 0; line-height: 1.4; color: #475569; }
+  ul { padding-left: 16px; margin-top: 6px; }
+  li { margin-bottom: 3px; }
+  li::marker { color: #0284c7; }
+  .link { color: #0284c7; text-decoration: none; font-size: 9px; font-weight: 600; display: inline-flex; align-items: center; margin-top: 6px; }
+  .link:hover { text-decoration: underline; }
+  .link i { margin-right: 4px; }
+  .project-tags { display: flex; gap: 5px; }
+  .project-tag { background-color: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 9999px; font-size: 8.5px; font-weight: 600; }
+  
+  /* Highlighted Project Frames */
+  .project-card { border: 1px solid #e2e8f0; border-left: 3px solid #0284c7; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; background-color: #ffffff; }
+  .project-card .item-header { margin-bottom: 4px; }
+  
+  /* Sidebar Styles */
+  .sidebar .section-title { border-bottom-color: #334155; color: #38bdf8; margin-top: 18px; }
+  .sidebar .section-title:first-child { margin-top: 0; }
+  .sidebar-block { margin-bottom: 12px; }
+  .sidebar-block strong { display: block; font-size: 10.5px; color: #38bdf8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;}
+  .sidebar-block p { font-size: 10px; color: #cbd5e1; margin: 0; line-height: 1.4; }
+  
+  /* Skill Pills */
+  .skills-container { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .skill-pill { border: 1px solid #475569; color: #e2e8f0; padding: 3px 8px; border-radius: 4px; font-size: 9px; background: rgba(255,255,255,0.02); }
+  
+  /* Framed Certification Boxes */
+  .cert-card { border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; background: rgba(255, 255, 255, 0.03); }
+  .cert-title { color: #ffffff; font-weight: 700; font-size: 10px; margin-bottom: 3px; line-height: 1.2; }
+  .cert-org { color: #38bdf8; font-size: 9px; margin-bottom: 4px; }
+  .cert-meta { color: #94a3b8; font-size: 8px; display: flex; justify-content: space-between; font-family: 'Courier New', Courier, monospace; }
+  
+  /* Language Dots */
+  .lang-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .lang-info { display: flex; flex-direction: column; }
+  .lang-name { color: #ffffff; font-size: 10.5px; font-weight: 700; margin-bottom: 2px; }
+  .dots { display: flex; gap: 3px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #334155; }
+  .dot.filled { background: #38bdf8; }
+  .lang-level { color: #cbd5e1; font-size: 9px; text-align: right; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <!-- Left: Profile Picture -->
+    <div class="profile-pic">
+      <img src="file:///C:/Users/tagay/OneDrive/Documents/Rasul/cvs/rasm.jpg" alt="Rasulbek Mashalov">
+    </div>
+    
+    <!-- Center: Details & Contact -->
+    <div class="header-content">
+      <h1>Rasulbek Mashalov</h1>
+      <div class="header-subtitle"><i class="fas fa-microchip" style="margin-right: 6px;"></i> AI & AUTOMATION ENGINEERING INTERN <span class="badge">Prepared for BMW Group</span></div>
+      <div class="contact-info">
+        <a href="tel:+36703459874"><i class="fas fa-phone"></i> +36 70 345 9874</a>
+        <a href="mailto:rasulbekmashalov@mailbox.unideb.hu"><i class="fas fa-envelope"></i> rasulbekmashalov@mailbox.unideb.hu</a>
+        <a href="https://linkedin.com/in/rasulbek-mashalov" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/rasulbek-mashalov</a>
+        <a href="https://github.com/rasuldeb25" target="_blank"><i class="fab fa-github"></i> github.com/rasuldeb25</a>
+      </div>
+    </div>
+    
+    <!-- Right: BMW Logo -->
+    <div class="brand-logo">
+      <img src="file:///C:/Users/tagay/Downloads/BMW-removebg-preview.png" alt="BMW Logo">
+    </div>
+  </div>
+  
+  <div class="content-wrapper">
+    <div class="main">
+      <div class="section-title"><i class="fas fa-user"></i> Professional Summary</div>
+      <p>MSc Computer Science Engineering student with specialized expertise in <strong>AI/LLM integration</strong>, <strong>Python automation</strong>, and <strong>intelligent automation frameworks</strong>. Experienced in developing AI agents, leveraging large language models (Gemini, Groq, local LM Studio), and applying deep learning to industrial automation and predictive maintenance. Bringing hands-on factory floor understanding and production line optimization knowledge to drive BMW Group's AI-driven manufacturing solutions.</p>
+      
+      <div class="section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+      <div class="item">
+        <div class="item-header"><span>Component Inspector / Sorting Worker</span><span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> Jun 2026 — Present</span></div>
+        <div class="item-sub"><i class="fas fa-building"></i> CATL Battery Manufacturing — Debrecen, Hungary</div>
+        <ul>
+          <li>Gained direct exposure to EV battery manufacturing operations, production line efficiency metrics, and quality control workflows.</li>
+          <li>Developed practical awareness of manufacturing IT infrastructure, operational bottlenecks, and real-world constraints informing intelligent system design.</li>
+        </ul>
+      </div>
+      <div class="item" style="margin-bottom: 20px;">
+        <div class="item-header"><span>Research Engineer — Computational Biophysics</span><span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> Aug 2023 — Aug 2025</span></div>
+        <div class="item-sub"><i class="fas fa-flask"></i> Center for Advanced Technologies — Tashkent, Uzbekistan</div>
+        <ul>
+          <li>Developed <strong>Python automation pipelines</strong> for large-scale data processing and visualization on Linux/HPC clusters (GROMACS, SLURM).</li>
+          <li>Designed monitoring workflows for long-running computational jobs, directly transferable to automated process monitoring systems.</li>
+        </ul>
+      </div>
+
+      <div class="section-title"><i class="fas fa-code-branch"></i> Key AI & Automation Projects</div>
+      
+      <!-- Boxed Project 1 -->
+      <div class="project-card">
+        <div class="item-header">
+          <span><i class="far fa-eye" style="color: #0284c7; margin-right: 5px;"></i> AI Automation Bot (LabBuddy)</span>
+          <div class="project-tags"><span class="project-tag">LLM APIs</span><span class="project-tag">MCP</span></div>
+        </div>
+        <p>Developed an intelligent Telegram bot integrating <strong>LLM APIs</strong> (Google Gemini, Groq) and <strong>local AI models</strong> (LM Studio) with <strong>Model Context Protocol (MCP) servers</strong> for secure filesystem access. Demonstrates prompt engineering and multi-model orchestration.</p>
+        <a href="https://github.com/rasuldeb25/labBuddy" target="_blank" class="link"><i class="fab fa-github"></i> github.com/rasuldeb25/labBuddy</a>
+      </div>
+      
+      <!-- Boxed Project 2 -->
+      <div class="project-card">
+        <div class="item-header">
+          <span><i class="fas fa-server" style="color: #0284c7; margin-right: 5px;"></i> VisionCare — Full-Stack App</span>
+          <div class="project-tags"><span class="project-tag">Spring Boot</span><span class="project-tag">React/Vite</span></div>
+        </div>
+        <p>Developed a production-grade web application using <strong>Spring Boot, React/Vite</strong>, and <strong>PostgreSQL</strong>, secured with <strong>JWT-based authentication</strong>. Demonstrates capability to design and deploy enterprise-level internal tools such as MES dashboards.</p>
+        <a href="https://vision-care-clinic-frontend.onrender.com" target="_blank" class="link"><i class="fas fa-external-link-alt"></i> vision-care-clinic-frontend.onrender.com</a>
+      </div>
+
+      <!-- Boxed Project 3 -->
+      <div class="project-card">
+        <div class="item-header">
+          <span><i class="fas fa-camera" style="color: #0284c7; margin-right: 5px;"></i> Computer Vision QC System</span>
+          <div class="project-tags"><span class="project-tag">YOLOv8</span><span class="project-tag">Computer Vision</span></div>
+        </div>
+        <p>Engineered a <strong>YOLOv8 object detection application</strong> (Python, OpenCV, Tkinter) for automated identification and counting. Directly applicable to factory floor quality assurance.</p>
+        <a href="https://github.com/rasuldeb25/coinDetHUF" target="_blank" class="link"><i class="fab fa-github"></i> github.com/rasuldeb25/coinDetHUF</a>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="section-title"><i class="fas fa-cogs"></i> Technical Skills</div>
+      
+      <div class="sidebar-block">
+        <strong>AI & Platforms</strong>
+        <div class="skills-container">
+          <span class="skill-pill">LLMs & GenAI</span><span class="skill-pill">PyTorch</span><span class="skill-pill">YOLOv8</span><span class="skill-pill">LM Studio</span><span class="skill-pill">Prompt Engineering</span>
+        </div>
+      </div>
+      
+      <div class="sidebar-block">
+        <strong>Automation & Arch</strong>
+        <div class="skills-container">
+          <span class="skill-pill">REST APIs</span><span class="skill-pill">MCP</span><span class="skill-pill">Docker</span><span class="skill-pill">Git / GitHub</span><span class="skill-pill">Linux (WSL)</span>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <strong>Programming & Data</strong>
+        <div class="skills-container">
+          <span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">JavaScript</span><span class="skill-pill">Spring Boot</span><span class="skill-pill">Pandas / NumPy</span><span class="skill-pill">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+      <div class="sidebar-block">
+        <strong style="color: #ffffff; font-size: 11px; margin-bottom: 2px;">MSc Computer Science Eng.</strong>
+        <p style="color: #38bdf8;">University of Debrecen</p>
+        <p><i class="far fa-calendar-alt"></i> Sep 2025 - Present</p>
+      </div>
+      <div class="sidebar-block">
+        <strong style="color: #ffffff; font-size: 11px; margin-bottom: 2px;">BSc in Physics</strong>
+        <p style="color: #38bdf8;">National University of Uzbekistan</p>
+        <p><i class="far fa-calendar-alt"></i> Sep 2020 - Jul 2024</p>
+      </div>
+
+      <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
+      
+      <!-- Framed Certification 1 -->
+      <div class="cert-card">
+        <div class="cert-title">Applications of AI for Predictive Maintenance</div>
+        <div class="cert-org">NVIDIA Deep Learning Institute</div>
+        <div class="cert-meta"><span>ID: 38Xt0jStR1qLXwTBdn0PuA</span><span>Nov 2025</span></div>
+      </div>
+
+      <!-- Framed Certification 2 -->
+      <div class="cert-card">
+        <div class="cert-title">Fundamentals of Accelerated Data Science</div>
+        <div class="cert-org">NVIDIA Deep Learning Institute</div>
+        <div class="cert-meta"><span>ID: P7Hq1rEUS6OwvnVGGANdow</span><span>Nov 2025</span></div>
+      </div>
+
+      <!-- Framed Certification 3 -->
+      <div class="cert-card">
+        <div class="cert-title">Fundamentals of Deep Learning</div>
+        <div class="cert-org">NVIDIA Deep Learning Institute</div>
+        <div class="cert-meta"><span>ID: 1t00Ys31TkGJKXM3sgBKrQ</span><span>Oct 2025</span></div>
+      </div>
+      
+      <div class="section-title"><i class="fas fa-language"></i> Languages</div>
+      
+      <!-- Language: English -->
+      <div class="lang-item">
+        <div class="lang-info">
+          <span class="lang-name">English</span>
+          <div class="dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+          </div>
+        </div>
+        <span class="lang-level">C1 Advanced</span>
+      </div>
+
+      <!-- Language: German -->
+      <div class="lang-item">
+        <div class="lang-info">
+          <span class="lang-name">German</span>
+          <div class="dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <span class="lang-level">B1 Intermediate</span>
+      </div>
+
+      <!-- Language: Hungarian -->
+      <div class="lang-item">
+        <div class="lang-info">
+          <span class="lang-name">Hungarian</span>
+          <div class="dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <span class="lang-level">A2 Elementary</span>
+      </div>
+
+      <!-- Language: Uzbek -->
+      <div class="lang-item">
+        <div class="lang-info">
+          <span class="lang-name">Uzbek</span>
+          <div class="dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <span class="lang-level">Native</span>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
